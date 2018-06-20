@@ -1,0 +1,44 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Blinds
+(
+        WebDriver driver = new FirefoxDriver();
+        driver.get("http://www.blinds.com");
+        float listprice;
+        driver.findElement(By.id("gcc-inline-search")).sendKeys("room darkening blinds"); //search for room darkening blinds
+        driver.findElement(By.id("gcc-inline-search")).sendKeys(Keys.ENTER);
+        driver.FindElement(By.LinkText("Price Low-High")).click; //sort the results of the search from low to high
+        
+        List<WebElement> results_WebElement = new LinkedList<WebElement>(); //create a linked list
+        
+        List<WebElement> results_listprice = new Linkedlist<Float>();  // create 2nd linked list to store prices
+        results_Webelement = d1.findElements(By.id("gcc-product-discount-price"));//store results into a linkedlist
+        
+//create another linked list of type string to store image title
+
+        List<String> product_names =  new LinkedList<String>();
+
+//loop through all the elements of the results_WebeEement list and get price and store it into the results_listprice list
+
+for(int i=0;i<products_Webelement.size();i++){
+
+    Float s = products_Webelement.get(i).getAttribute("alt");
+
+    product_names.add(s);
+
+}
+
+//send the list to chkalphabetical_order method to check if the elements in the list are in alphabetical order    
+
+boolean result = chkalphabetical_order(product_names);
+
+
+//print the result    
+
+System.out.println(result);
+}
